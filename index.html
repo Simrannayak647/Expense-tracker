@@ -4,125 +4,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Expense Tracker</title>
-
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #f7f8fa;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    h1 {
-      color: #333;
-      margin-top: 40px;
-    }
-
-    .container {
-      background: white;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      border-radius: 12px;
-      width: 350px;
-      padding: 20px;
-      margin-top: 20px;
-    }
-
-    input, button {
-      width: 100%;
-      padding: 10px;
-      margin: 8px 0;
-      border-radius: 8px;
-      border: 1px solid #ddd;
-      font-size: 14px;
-    }
-
-    button {
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      cursor: pointer;
-      transition: 0.2s;
-    }
-
-    button:hover {
-      background-color: #45a049;
-    }
-
-    ul {
-      list-style-type: none;
-      padding: 0;
-    }
-
-    li {
-      background-color: #f4f4f4;
-      margin: 6px 0;
-      padding: 10px;
-      border-radius: 6px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .amount {
-      font-weight: bold;
-      color: #1a73e8;
-    }
-  </style>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <h1>💰 Expense Tracker</h1>
 
-  <div class="container">
-    <input type="text" id="desc" placeholder="Expense Description" />
-    <input type="number" id="amount" placeholder="Amount (₹)" />
-    <button id="addBtn">Add Expense</button>
+  <div class="box1">
+    <h1 id="text">🛒</h1> 
+</div>
+  <div class="box">
+    <input id="itemInput" type="text" placeholder="Enter item name (e.g. sugar)" />
+    <button id="addBtn">Add to transaction</button>
 
-    <h3>Expenses:</h3>
-    <ul id="expenseList"></ul>
+    <ul id="cartList"></ul>
+
     <h3>Total: ₹<span id="total">0</span></h3>
+
+
   </div>
 
-  <script>
-    const descInput = document.getElementById('desc');
-    const amountInput = document.getElementById('amount');
-    const addBtn = document.getElementById('addBtn');
-    const list = document.getElementById('expenseList');
-    const total = document.getElementById('total');
-
-    let expenses = [];
-
-    addBtn.addEventListener('click', () => {
-      const desc = descInput.value.trim();
-      const amount = parseFloat(amountInput.value);
-
-      if (!desc || isNaN(amount) || amount <= 0) {
-        alert('Enter a valid description and amount.');
-        return;
-      }
-
-      const expense = { desc, amount };
-      expenses.push(expense);
-      updateUI();
-
-      descInput.value = '';
-      amountInput.value = '';
-    });
-
-    function updateUI() {
-      list.innerHTML = '';
-      let sum = 0;
-      expenses.forEach((ex, i) => {
-        sum += ex.amount;
-        const li = document.createElement('li');
-        li.innerHTML = `${ex.desc} <span class='amount'>₹${ex.amount}</span>`;
-        list.appendChild(li);
-      });
-      total.textContent = sum.toFixed(2);
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>

@@ -1,1 +1,137 @@
-This is css file 
+/* --- BODY STYLES --- */
+body {
+    font-family: 'Poppins', sans-serif;
+    /* Softened Light Background Gradient */
+    background: linear-gradient(135deg, #f0f2f5 0%, #ffffff 100%); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 30px 10px; /* Increased padding for better vertical spacing */
+    min-height: 100vh; /* Ensure the gradient covers the full viewport */
+}
+
+/* --- HEADING (H1) --- */
+h1 { 
+    /* Use a sophisticated dark gray instead of pure black */
+    color: #2c3e50; 
+    font-size: 1.8em; /* Slightly smaller, more refined size */
+    margin-bottom: 25px; /* Added spacing below the heading */
+}
+
+/* --- MAIN CONTAINER (BOX) --- */
+.box {
+    background: white;
+    /* Softer, more diffuse shadow for a 'floating' look */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); 
+    padding: 40px 30px; /* Increased internal padding */
+    border-radius: 12px; /* Modern, slightly larger corner radius */
+    width: 390px;
+    max-width: 90%; /* Safety for mobile views */
+    /* Added a very subtle border for definition */
+    border: 1px solid #e0e0e0; 
+}
+
+/* --- GENERAL INPUT & BUTTON STYLES --- */
+input, button {
+    width: 100%; /* Changed from 95% to 100% for alignment */
+    padding: 12px; /* Increased padding for a larger touch area */
+    margin: 10px 0;
+    border-radius: 8px; /* Consistent rounding */
+    font-size: 16px;
+    box-sizing: border-box; /* Crucial: padding won't increase width */
+}
+
+/* --- ITEM INPUT FOCUS --- */
+#itemInput {
+    /* Changed text color to a professional dark gray */
+    color: #333; 
+    border: 1px solid #ccc;
+    transition: all 0.3s ease; 
+}
+
+#itemInput:focus {
+    outline: none; 
+    /* Professional Blue-Green Focus Glow (Aesthetic change) */
+    border-color: #2ecc71; 
+    box-shadow: 0 0 8px rgba(46, 204, 113, 0.5); 
+}
+
+/* --- BUTTON STYLES --- */
+button {
+    /* Adjusted hue for a more classic, deep purple/magenta */
+    background: #8e44ad; 
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    /* Added subtle box shadow to button for depth */
+    box-shadow: 0 4px 10px rgba(142, 68, 173, 0.4); 
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    border: none; /* Remove default button border */
+}
+
+button:hover {
+    background: #9b59b6; /* Slightly lighter on hover */
+    transform: translateY(-1px); /* Subtle lift effect */
+}
+
+/* --- LIST ITEM STYLES (Slightly enhanced) --- */
+/* === CART ITEM === */
+li {
+  background: #fff;
+  margin: 6px 0;
+  padding: 14px 18px;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 1fr auto auto; /* name | price | delete */
+  align-items: center;
+  gap: 14px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #2c3e50;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.25s ease;
+}
+
+li:hover {
+  background: #fafafa;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+/* === PRICE === */
+.price {
+  color: #16a085; /* soft green tone */
+  font-weight: 700;
+  font-size: 17px;
+  text-align: right;
+  white-space: nowrap;
+  letter-spacing: 0.3px;
+}
+
+/* === DELETE BUTTON === */
+.deleteBtn {
+  background: none;
+  border: none;
+  color: #e74c3c;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  opacity: 0; /* hidden by default */
+  pointer-events: none;
+  transition: all 0.25s ease;
+}
+
+/* === SHOW DELETE ICON ON HOVER === */
+li:hover .deleteBtn {
+  opacity: 1;
+  background-color: none;
+  pointer-events: auto;
+  transform: scale(1.1);
+}
+
+.deleteBtn:hover {
+  color: #c0392b;
+  transform: scale(1.3);
+}
