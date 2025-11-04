@@ -1,6 +1,13 @@
-# 🛒 Smart Expense Tracker  
+# 🛒  Expense Tracker  
 
 A **simple and smart expense tracker** built using **HTML**, **CSS**, and **JavaScript** — with real-time prices fetched from the [DummyJSON API](https://dummyjson.com).  
+
+---
+🌟 Overview
+
+This project was built to practice JavaScript fundamentals — APIs, DOM manipulation, and browser storage — while also focusing on clean UI design and a smooth user experience.
+
+It’s lightweight, interactive, and works right inside your browser — no database, no backend, just logic and local persistence.
 
 ---
 
